@@ -1,4 +1,4 @@
-import Head from 'next/head';
+import type { Metadata } from 'next';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
 import Skills from '@/components/Skills';
@@ -6,70 +6,80 @@ import Projects from '@/components/Projects';
 import Resume from '@/components/Resume';
 import Contact from '@/components/Contact';
 
+// Server-side metadata - Google will see this immediately
+export const metadata: Metadata = {
+  title: 'Sachin Manral — Tech Freelancer & Freelance Web, Full-Stack, AI/ML Developer | Hire Me',
+  description: 'Hire Sachin Manral, tech freelancer and freelance software developer specializing in React, Node.js, full-stack apps, e-commerce websites, and AI/ML solutions. View portfolio, case studies, and contact for freelance projects.',
+  robots: 'index, follow',
+  openGraph: {
+    title: 'Sachin Manral — Tech Freelancer & Developer',
+    description: 'Hire Sachin Manral for freelance web development, full-stack apps, and AI/ML solutions.',
+    url: 'https://sachinmanral.com',
+    siteName: 'Sachin Manral Portfolio',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Sachin Manral — Tech Freelancer',
+    description: 'Freelance developer specializing in React, Node.js, and AI/ML',
+  }
+};
+
 export default function Home() {
   return (
     <>
-      <Head>
-        <title>Sachin Manral — Tech Freelancer & Freelance Web, Full-Stack, AI/ML Developer | Hire Me</title>
-          <meta
-            name="description"
-            content="Hire Sachin Manral, tech freelancer and freelance software developer specializing in React, Node.js, full-stack apps, e-commerce websites, and AI/ML solutions. View portfolio, case studies, and contact for freelance projects."
-          />
-          <meta name="robots" content="index, follow" />
+      {/* JSON-LD Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Sachin Manral",
+            "url": "https://sachinmanral.com",
+            "jobTitle": "Software Developer & Tech Freelancer",
+            "image": "https://sachinmanral.com/path/to/avatar.jpg",
+            "sameAs": [
+              "https://github.com/SachinManral",
+              "https://www.linkedin.com/in/sachin-manral/"
+            ],
+            "knowsAbout": ["Web Development","React","Node.js","AI","Machine Learning"]
+          })
+        }}
+      />
 
-        {/* JSON-LD Person */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
+      {/* JSON-LD Projects */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            {
               "@context": "https://schema.org",
-              "@type": "Person",
-              "name": "Sachin Manral",
-              "url": "https://sachinmanral.com",
-              "jobTitle": "Software Developer & Tech Freelancer",
-              "image": "https://sachinmanral.com/path/to/avatar.jpg",
-              "sameAs": [
-                "https://github.com/SachinManral",
-                "https://www.linkedin.com/in/sachin-manral/"
-              ],
-              "knowsAbout": ["Web Development","React","Node.js","AI","Machine Learning"]
-            })
-          }}
-        />
-
-        {/* JSON-LD Projects (CreativeWork) */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify([
-              {
-                "@context": "https://schema.org",
-                "@type": "CreativeWork",
-                "headline": "E-commerce Dashboard — React + Node.js Case Study",
-                "description": "Built a real-time e-commerce dashboard using React, Node.js, and MongoDB. Architecture, code snippets, and performance improvements included.",
-                "url": "https://sachinmanral.com/#projects",
-                "creator": {
-                  "@type": "Person",
-                  "name": "Sachin Manral"
-                },
-                "datePublished": "2025-10-05"
+              "@type": "CreativeWork",
+              "headline": "E-commerce Dashboard — React + Node.js Case Study",
+              "description": "Built a real-time e-commerce dashboard using React, Node.js, and MongoDB. Architecture, code snippets, and performance improvements included.",
+              "url": "https://sachinmanral.com/#projects",
+              "creator": {
+                "@type": "Person",
+                "name": "Sachin Manral"
               },
-              {
-                "@context": "https://schema.org",
-                "@type": "CreativeWork",
-                "headline": "AI Image Classifier Deployment",
-                "description": "Deployed an image classification ML model using Python, Flask, and AWS Lambda with REST API integration.",
-                "url": "https://sachinmanral.com/#projects",
-                "creator": {
-                  "@type": "Person",
-                  "name": "Sachin Manral"
-                },
-                "datePublished": "2025-10-05"
-              }
-            ])
-          }}
-        />
-      </Head>
+              "datePublished": "2025-10-05"
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "CreativeWork",
+              "headline": "AI Image Classifier Deployment",
+              "description": "Deployed an image classification ML model using Python, Flask, and AWS Lambda with REST API integration.",
+              "url": "https://sachinmanral.com/#projects",
+              "creator": {
+                "@type": "Person",
+                "name": "Sachin Manral"
+              },
+              "datePublished": "2025-10-05"
+            }
+          ])
+        }}
+      />
 
       <main className="w-full min-h-screen">
         {/* Hero Section */}
