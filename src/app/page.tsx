@@ -30,7 +30,7 @@ export default function Home() {
               "image": "https://sachinmanral.com/path/to/avatar.jpg",
               "sameAs": [
                 "https://github.com/SachinManral",
-                "https://www.linkedin.com/in/yourprofile"
+                "https://www.linkedin.com/in/sachin-manral/"
               ],
               "knowsAbout": ["Web Development","React","Node.js","AI","Machine Learning"]
             })
