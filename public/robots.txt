@@ -6,4 +6,4 @@ Allow: /
 Host: https://sachinmanral.com
 
 # Sitemaps
-Sitemap: https://sachinmanral.com/sitemap.xml
+Sitemap: https://sachinmanral.com/sitemap-0.xml
