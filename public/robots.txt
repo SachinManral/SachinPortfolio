@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://sachinmanral.com
+
+# Sitemaps
+Sitemap: https://sachinmanral.com/sitemap.xml
