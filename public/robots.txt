@@ -1,9 +1,6 @@
-# *
+# Allow all bots to crawl everything
 User-agent: *
 Allow: /
 
-# Host
-Host: https://sachinmanral.com
-
-# Sitemaps
+# Sitemap
 Sitemap: https://sachinmanral.com/sitemap-0.xml
