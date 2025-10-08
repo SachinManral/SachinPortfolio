@@ -8,8 +8,8 @@ import Contact from '@/components/Contact';
 
 // Server-side metadata - Google will see this immediately
 export const metadata: Metadata = {
-  title: 'Sachin Manral — Tech Freelancer & Freelance Web, Full-Stack, AI/ML Developer | Hire Me',
-  description: 'Hire Sachin Manral, tech freelancer and freelance software developer specializing in React, Node.js, full-stack apps, e-commerce websites, and AI/ML solutions. View portfolio, case studies, and contact for freelance projects.',
+  title: 'Sachin Manral | Freelance Web & AI/ML Developer',
+  description: 'Hire Sachin Manral — expert freelance web developer skilled in React, Node.js, full-stack apps, and AI/ML projects. Get custom solutions that elevate your business.',
   robots: 'index, follow',
   openGraph: {
     title: 'Sachin Manral — Tech Freelancer & Developer',
