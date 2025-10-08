@@ -1,4 +1,4 @@
-# Updated robots.txt — 7 Oct 2025
+# Allow all bots to crawl everything
 User-agent: *
 Allow: /
 
