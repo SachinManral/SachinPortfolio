@@ -13,7 +13,7 @@ const nextConfig: NextConfig = {
         hostname: 'sachinmanral.com',
       },
     ],
-    unoptimized: true, // make it false if there is backend
+    unoptimized: false, // make it false if there is backend
   },
   eslint: {
     ignoreDuringBuilds: true,
