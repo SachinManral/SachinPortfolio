@@ -7,23 +7,68 @@ import Resume from '@/components/Resume';
 import Contact from '@/components/Contact';
 
 // Server-side metadata - Google will see this immediately
+// export const metadata: Metadata = {
+//   title: 'Sachin Manral | Freelance Web & AI/ML Developer',
+//   description: 'Hire Sachin Manral — expert freelance web developer skilled in React, Node.js, full-stack apps, and AI/ML projects. Get custom solutions that elevate your business.',
+//   robots: 'index, follow',
+//   openGraph: {
+//     title: 'Sachin Manral — Tech Freelancer & Developer',
+//     description: 'Hire Sachin Manral for freelance web development, full-stack apps, and AI/ML solutions.',
+//     url: 'https://sachinmanral.com',
+//     siteName: 'Sachin Manral Portfolio',
+//     type: 'website',
+//   },
+//   twitter: {
+//     card: 'summary_large_image',
+//     title: 'Sachin Manral — Tech Freelancer',
+//     description: 'Freelance developer specializing in React, Node.js, and AI/ML',
+//   }
+// };
+
 export const metadata: Metadata = {
   title: 'Sachin Manral | Freelance Web & AI/ML Developer',
-  description: 'Hire Sachin Manral — expert freelance web developer skilled in React, Node.js, full-stack apps, and AI/ML projects. Get custom solutions that elevate your business.',
+  description: 'Hire Sachin Manral — expert freelance web developer specializing in React, Node.js, full-stack applications, and AI/ML solutions. Get custom software that drives growth and innovation.',
   robots: 'index, follow',
+  keywords: [
+    'Sachin Manral',
+    'Sachin Manral Portfolio',
+    'freelance web developer',
+    'React developer',
+    'Node.js developer',
+    'AI developer',
+    'Machine Learning freelancer',
+    'full-stack developer',
+    'custom software solutions',
+    'portfolio'
+  ],
+  authors: [{ name: 'Sachin Manral' }],
   openGraph: {
-    title: 'Sachin Manral — Tech Freelancer & Developer',
-    description: 'Hire Sachin Manral for freelance web development, full-stack apps, and AI/ML solutions.',
+    title: 'Sachin Manral — Freelance Web & AI/ML Developer',
+    description: 'Expert freelance developer offering full-stack web development, React, Node.js, and AI/ML solutions to elevate your business.',
     url: 'https://sachinmanral.com',
     siteName: 'Sachin Manral Portfolio',
     type: 'website',
+    images: [
+      {
+        url: 'https://sachinmanral.com/assets/avatar.png',
+        width: 500,
+        height: 500,
+        alt: 'Sachin Manral Avatar',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Sachin Manral — Tech Freelancer',
-    description: 'Freelance developer specializing in React, Node.js, and AI/ML',
-  }
+    title: 'Sachin Manral — Freelance Web & AI/ML Developer',
+    description: 'Freelance developer specializing in React, Node.js, full-stack apps, and AI/ML solutions.',
+    images: ['https://sachinmanral.com/assets/avatar.png'],
+  },
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+  },
 };
+
 
 export default function Home() {
   return (
@@ -38,12 +83,15 @@ export default function Home() {
             "name": "Sachin Manral",
             "url": "https://sachinmanral.com",
             "jobTitle": "Software Developer & Tech Freelancer",
-            "image": "https://sachinmanral.com/path/to/avatar.jpg",
+            "image": "https://sachinmanral.com/assets/avatar.png",
             "sameAs": [
               "https://github.com/SachinManral",
-              "https://www.linkedin.com/in/sachin-manral/"
+              "https://www.linkedin.com/in/sachin-manral/",
+              "https://www.instagram.com/x.sa_xhinn/",
+              "https://leetcode.com/u/SachinManral/"
             ],
-            "knowsAbout": ["Web Development","React","Node.js","AI","Machine Learning"]
+            "knowsAbout": ["Web Development","React","Node.js","AI","Machine Learning"],
+            "description": "Expert freelance web developer specializing in React, Node.js, full-stack applications, and AI/ML solutions."
           })
         }}
       />
