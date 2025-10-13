@@ -13,7 +13,7 @@ const nextConfig: NextConfig = {
         hostname: 'sachinmanral.com',
       },
     ],
-    unoptimized: false, 
+    unoptimized: true, 
   },
   eslint: {
     ignoreDuringBuilds: true,

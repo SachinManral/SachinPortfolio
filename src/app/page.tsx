@@ -1,167 +1,241 @@
 import type { Metadata } from 'next';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
+import Resume from '@/components/Resume';
 import Skills from '@/components/Skills';
 import Projects from '@/components/Projects';
-import Resume from '@/components/Resume';
 import Contact from '@/components/Contact';
 
-// Server-side metadata - Google will see this immediately
-// export const metadata: Metadata = {
-//   title: 'Sachin Manral | Freelance Web & AI/ML Developer',
-//   description: 'Hire Sachin Manral — expert freelance web developer skilled in React, Node.js, full-stack apps, and AI/ML projects. Get custom solutions that elevate your business.',
-//   robots: 'index, follow',
-//   openGraph: {
-//     title: 'Sachin Manral — Tech Freelancer & Developer',
-//     description: 'Hire Sachin Manral for freelance web development, full-stack apps, and AI/ML solutions.',
-//     url: 'https://sachinmanral.com',
-//     siteName: 'Sachin Manral Portfolio',
-//     type: 'website',
-//   },
-//   twitter: {
-//     card: 'summary_large_image',
-//     title: 'Sachin Manral — Tech Freelancer',
-//     description: 'Freelance developer specializing in React, Node.js, and AI/ML',
-//   }
-// };
-
 export const metadata: Metadata = {
-  title: 'Sachin Manral | Freelance Web & AI/ML Developer',
-  description: 'Hire Sachin Manral — expert freelance web developer specializing in React, Node.js, full-stack applications, and AI/ML solutions. Get custom software that drives growth and innovation.',
-  robots: 'index, follow',
+  metadataBase: new URL('https://sachinmanral.com'),
+
+  title: 'Sachin Manral | Freelance Web & AI/ML Developer for Scalable Apps & Smart Systems',
+  description:
+    "I'm Sachin Manral — a freelance full-stack web & AI/ML developer. I build scalable React + Node.js apps and intelligent machine learning systems that help startups and businesses accelerate growth.",
+
   keywords: [
     'Sachin Manral',
-    'Sachin Manral Portfolio',
     'freelance web developer',
     'React developer',
     'Node.js developer',
     'AI developer',
-    'Machine Learning freelancer',
+    'Machine Learning developer',
     'full-stack developer',
-    'custom software solutions',
-    'portfolio'
+    'portfolio',
+    'software engineer freelancer',
+    'MERN developer',
   ],
-  authors: [{ name: 'Sachin Manral' }],
+
+  viewport: 'width=device-width, initial-scale=1.0',
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+
+  authors: [{ name: 'Sachin Manral', url: 'https://sachinmanral.com' }],
+
+  alternates: {
+    canonical: 'https://sachinmanral.com',
+  },
+
   openGraph: {
-    title: 'Sachin Manral — Freelance Web & AI/ML Developer',
-    description: 'Expert freelance developer offering full-stack web development, React, Node.js, and AI/ML solutions to elevate your business.',
+    title: 'Sachin Manral | Freelance Web & AI/ML Developer for Scalable Apps',
+    description:
+      'Expert freelance developer offering full-stack web development, React, Node.js, and AI/ML solutions to elevate your business.',
     url: 'https://sachinmanral.com',
     siteName: 'Sachin Manral Portfolio',
+    locale: 'en_IN',
     type: 'website',
     images: [
       {
         url: 'https://sachinmanral.com/assets/avatar.png',
         width: 500,
         height: 500,
-        alt: 'Sachin Manral Avatar',
+        alt: 'Sachin Manral — Full-Stack Web & AI/ML Developer',
       },
     ],
   },
+
   twitter: {
     card: 'summary_large_image',
-    title: 'Sachin Manral — Freelance Web & AI/ML Developer',
-    description: 'Freelance developer specializing in React, Node.js, full-stack apps, and AI/ML solutions.',
+    title: 'Sachin Manral | Freelance Web & AI/ML Developer',
+    description:
+      'Freelance developer specializing in React, Node.js, full-stack apps, and AI/ML solutions.',
     images: ['https://sachinmanral.com/assets/avatar.png'],
   },
+
   icons: {
     icon: '/favicon.ico',
     shortcut: '/favicon.ico',
-  },
-};
+    apple: '/apple-touch-icon.png',
 
+  },
+
+  themeColor: '#0f172a',
+};
 
 export default function Home() {
   return (
     <>
-      {/* JSON-LD Structured Data */}
+      {/* JSON-LD: WebSite Schema with SearchAction */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Person",
-            "name": "Sachin Manral",
-            "url": "https://sachinmanral.com",
-            "jobTitle": "Software Developer & Tech Freelancer",
-            "image": "https://sachinmanral.com/assets/avatar.png",
-            "sameAs": [
-              "https://github.com/SachinManral",
-              "https://www.linkedin.com/in/sachin-manral/",
-              "https://www.instagram.com/x.sa_xhinn/",
-              "https://leetcode.com/u/SachinManral/"
-            ],
-            "knowsAbout": ["Web Development","React","Node.js","AI","Machine Learning"],
-            "description": "Expert freelance web developer specializing in React, Node.js, full-stack applications, and AI/ML solutions."
-          })
+            '@context': 'https://schema.org',
+            '@type': 'WebSite',
+            url: 'https://sachinmanral.com',
+            name: 'Sachin Manral Portfolio',
+            description: 'Portfolio of Sachin Manral — freelance full-stack web and AI/ML developer',
+            potentialAction: {
+              '@type': 'SearchAction',
+              target: {
+                '@type': 'EntryPoint',
+                urlTemplate: 'https://sachinmanral.com/?q={search_term_string}',
+              },
+              'query-input': 'required name=search_term_string',
+            },
+          }),
         }}
       />
 
-      {/* JSON-LD Projects */}
+      {/* JSON-LD: Enhanced Person Schema */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify([
-            {
-              "@context": "https://schema.org",
-              "@type": "CreativeWork",
-              "headline": "E-commerce Dashboard — React + Node.js Case Study",
-              "description": "Built a real-time e-commerce dashboard using React, Node.js, and MongoDB. Architecture, code snippets, and performance improvements included.",
-              "url": "https://sachinmanral.com/#projects",
-              "creator": {
-                "@type": "Person",
-                "name": "Sachin Manral"
-              },
-              "datePublished": "2025-10-05"
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Person',
+            name: 'Sachin Manral',
+            url: 'https://sachinmanral.com',
+            image: 'https://sachinmanral.com/assets/avatar.png',
+            jobTitle: 'Full-Stack Web & AI/ML Developer',
+            email: 'mailto:contact@sachinmanral.com',
+            sameAs: [
+              'https://github.com/SachinManral',
+              'https://www.linkedin.com/in/sachin-manral/',
+              'https://leetcode.com/u/SachinManral/',
+              'https://www.instagram.com/x.sa_xhinn/',
+            ],
+            worksFor: {
+              '@type': 'Organization',
+              name: 'Freelance',
+              url: 'https://sachinmanral.com',
             },
-            {
-              "@context": "https://schema.org",
-              "@type": "CreativeWork",
-              "headline": "AI Image Classifier Deployment",
-              "description": "Deployed an image classification ML model using Python, Flask, and AWS Lambda with REST API integration.",
-              "url": "https://sachinmanral.com/#projects",
-              "creator": {
-                "@type": "Person",
-                "name": "Sachin Manral"
-              },
-              "datePublished": "2025-10-05"
-            }
-          ])
+            alumniOf: {
+              '@type': 'CollegeOrUniversity',
+              name: 'Graphic Era Hill University',
+            },
+            knowsAbout: [
+              'React',
+              'Node.js',
+              'AI',
+              'Machine Learning',
+              'MERN Stack',
+              'Full-Stack Development',
+              'Python',
+              'TypeScript',
+            ],
+            description:
+              'Freelance full-stack web & AI/ML developer specializing in building intelligent, scalable software systems for startups and businesses.',
+            publisher: {
+              '@type': 'Person',
+              name: 'Sachin Manral',
+            },
+          }),
+        }}
+      />
+
+      {/* JSON-LD: Projects as Individual Articles */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Article',
+            headline: 'E-commerce Dashboard — React + Node.js Case Study',
+            description:
+              'Built a real-time e-commerce dashboard using React, Node.js, and MongoDB. Architecture, code snippets, and performance improvements included.',
+            url: 'https://sachinmanral.com/#projects',
+            author: { '@type': 'Person', name: 'Sachin Manral', url: 'https://sachinmanral.com' },
+            publisher: { '@type': 'Person', name: 'Sachin Manral' },
+            datePublished: '2025-10-05',
+            dateModified: '2025-10-05',
+          }),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Article',
+            headline: 'AI Image Classifier Deployment',
+            description:
+              'Deployed an image classification ML model using Python, Flask, and AWS Lambda with REST API integration.',
+            url: 'https://sachinmanral.com/#projects',
+            author: { '@type': 'Person', name: 'Sachin Manral', url: 'https://sachinmanral.com' },
+            publisher: { '@type': 'Person', name: 'Sachin Manral' },
+            datePublished: '2025-10-05',
+            dateModified: '2025-10-05',
+          }),
         }}
       />
 
       <main className="w-full min-h-screen">
         {/* Hero Section */}
-        <section id="hero">
+        <section id="hero" aria-labelledby="hero-heading">
+          <h1 id="hero-heading" className="text-4xl font-bold">
+            Freelance Full-Stack Web & AI/ML Developer — Sachin Manral
+          </h1>
           <Hero />
         </section>
 
         {/* About Section */}
-        <section id="about">
-          <h2 className="sr-only">About Me — Freelance Full-Stack & AI/ML Developer</h2>
+        <section id="about" aria-labelledby="about-heading">
+          <h2 id="about-heading" className="text-3xl font-semibold">
+            About — Who I Am and What I Build
+          </h2>
           <About />
         </section>
 
         {/* Resume Section */}
-        <section id="resume">
-          <h2 className="sr-only">Resume & Experience</h2>
+        <section id="resume" aria-labelledby="resume-heading">
+          <h2 id="resume-heading" className="text-3xl font-semibold">
+            Resume & Experience
+          </h2>
           <Resume />
         </section>
 
         {/* Skills Section */}
-        <section id="skills">
-          <h2 className="sr-only">Skills & Technologies</h2>
+        <section id="skills" aria-labelledby="skills-heading">
+          <h2 id="skills-heading" className="text-3xl font-semibold">
+            Skills & Technologies I Use
+          </h2>
           <Skills />
         </section>
 
         {/* Projects Section */}
-        <section id="projects">
-          <h2 className="sr-only">Portfolio / Case Studies — React, Node.js, AI/ML Projects</h2>
+        <section id="projects" aria-labelledby="projects-heading">
+          <h2 id="projects-heading" className="text-3xl font-semibold">
+            My Projects — Web Apps & AI Case Studies
+          </h2>
           <Projects />
         </section>
 
         {/* Contact Section */}
-        <section id="contact">
-          <h2 className="sr-only">Contact Me — Hire Freelance Developer</h2>
+        <section id="contact" aria-labelledby="contact-heading">
+          <h2 id="contact-heading" className="text-3xl font-semibold">
+            Hire Me — Let's Build Something Together
+          </h2>
           <Contact />
         </section>
       </main>
