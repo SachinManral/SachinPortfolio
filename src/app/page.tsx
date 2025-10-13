@@ -26,8 +26,6 @@ export const metadata: Metadata = {
     'MERN developer',
   ],
 
-  viewport: 'width=device-width, initial-scale=1.0',
-
   robots: {
     index: true,
     follow: true,
@@ -65,7 +63,7 @@ export const metadata: Metadata = {
   },
 
   twitter: {
-    card: 'summary_large_image',
+    card: 'summary',
     title: 'Sachin Manral | Freelance Web & AI/ML Developer',
     description:
       'Freelance developer specializing in React, Node.js, full-stack apps, and AI/ML solutions.',
@@ -76,11 +74,13 @@ export const metadata: Metadata = {
     icon: '/favicon.ico',
     shortcut: '/favicon.ico',
     apple: '/apple-touch-icon.png',
-
   },
+};
 
+export const viewport = {
   themeColor: '#0f172a',
 };
+
 
 export default function Home() {
   return (
@@ -146,10 +146,6 @@ export default function Home() {
             ],
             description:
               'Freelance full-stack web & AI/ML developer specializing in building intelligent, scalable software systems for startups and businesses.',
-            publisher: {
-              '@type': 'Person',
-              name: 'Sachin Manral',
-            },
           }),
         }}
       />
@@ -192,50 +188,32 @@ export default function Home() {
 
       <main className="w-full min-h-screen">
         {/* Hero Section */}
-        <section id="hero" aria-labelledby="hero-heading">
-          <h1 id="hero-heading" className="text-4xl font-bold">
-            Freelance Full-Stack Web & AI/ML Developer — Sachin Manral
-          </h1>
+        <section id="hero">
           <Hero />
         </section>
 
         {/* About Section */}
-        <section id="about" aria-labelledby="about-heading">
-          <h2 id="about-heading" className="text-3xl font-semibold">
-            About — Who I Am and What I Build
-          </h2>
+        <section id="about">
           <About />
         </section>
 
         {/* Resume Section */}
-        <section id="resume" aria-labelledby="resume-heading">
-          <h2 id="resume-heading" className="text-3xl font-semibold">
-            Resume & Experience
-          </h2>
+        <section id="resume">
           <Resume />
         </section>
 
         {/* Skills Section */}
-        <section id="skills" aria-labelledby="skills-heading">
-          <h2 id="skills-heading" className="text-3xl font-semibold">
-            Skills & Technologies I Use
-          </h2>
+        <section id="skills">
           <Skills />
         </section>
 
         {/* Projects Section */}
-        <section id="projects" aria-labelledby="projects-heading">
-          <h2 id="projects-heading" className="text-3xl font-semibold">
-            My Projects — Web Apps & AI Case Studies
-          </h2>
+        <section id="projects">
           <Projects />
         </section>
 
         {/* Contact Section */}
-        <section id="contact" aria-labelledby="contact-heading">
-          <h2 id="contact-heading" className="text-3xl font-semibold">
-            Hire Me — Let's Build Something Together
-          </h2>
+        <section id="contact">
           <Contact />
         </section>
       </main>
