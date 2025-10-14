@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
   title: 'Sachin Manral | Freelance Web & AI/ML Developer for Scalable Apps & Smart Systems',
   description:
-    "I'm Sachin Manral — a freelance full-stack web & AI/ML developer. I build scalable React + Node.js apps and intelligent machine learning systems that help startups and businesses accelerate growth.",
+    "Sachin Manral — Freelance Full-Stack & AI/ML Developer. I craft scalable React/Node apps & intelligent ML solutions to boost startup growth.",
 
   keywords: [
     'Sachin Manral',
