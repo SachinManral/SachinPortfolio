@@ -208,7 +208,7 @@ const About: React.FC = () => {
                     {/* Replace the src with your imported image: src={avatarImage} */}
 
                     <Image
-                      src="/assets/avatar.png"
+                      src="/assets/avatarImg.png"
                       alt="Sachin Manral"
                       width={400}      // set the desired width
                       height={400}     // set the desired height

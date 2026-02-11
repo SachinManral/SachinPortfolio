@@ -337,7 +337,7 @@ const Resume: React.FC = () => {
           className="mt-20 text-center"
         >
           <motion.a
-            href="https://drive.google.com/file/d/11-CfpcxqXoHwv7Syc7mq27TaLJIfPkOT/view?usp=drive_link"
+            href="https://drive.google.com/file/d/1pFsUh_CC-hTJkqlq2z49OrviKk5912ZJ/view?usp=drive_link"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
