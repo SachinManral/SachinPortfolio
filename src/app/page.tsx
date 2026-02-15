@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: 'https://sachinmanral.com/assets/avatar.png',
+        url: 'https://sachinmanral.com/assets/avatarImg.png',
         width: 500,
         height: 500,
         alt: 'Sachin Manral — Full-Stack Web & AI/ML Developer',
