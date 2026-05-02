@@ -1,5 +1,6 @@
 import './globals.css';
 import ClientWrapper from './ClientWrapper';
+import { Analytics } from '@vercel/analytics/next';
 
 export const metadata = {
   title: 'Sachin Manral Portfolio',
@@ -15,6 +16,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="bg-black text-white">
         <ClientWrapper>{children}</ClientWrapper>
+        <Analytics />
       </body>
     </html>
   );
